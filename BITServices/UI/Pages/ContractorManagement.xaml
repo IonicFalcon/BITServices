@@ -1,0 +1,168 @@
+﻿<Page x:Class="BITServices.UI.Pages.ContractorManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BITServices.UI.Pages"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:uc="clr-namespace:BITServices.UI.UserControls"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="510" d:DesignWidth="610"
+      Title="ContractorManagement" Loaded="Page_Loaded">
+    <Page.Resources>
+        <ObjectDataProvider x:Key="DayValues" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="sys:DayOfWeek" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Page.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False">
+            <!--<WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Top">
+                <Label Content="Search" DockPanel.Dock="Top" Target="{Binding ElementName=txtSearch}"/>
+                <TextBox x:Name="txtSearch" DockPanel.Dock="Top" Width="150" Height="25"/>
+            </WrapPanel>-->
+            <DataGrid x:Name="dgrRecords" Margin="0,5" Height="190" DockPanel.Dock="Top" ItemsSource="{Binding ContractorCollection}" SelectedItem="{Binding SelectedContractor}" IsReadOnly="True">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataGridSelectionCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+            <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                <Button x:Name="btnNew" Content="New" Padding="5" Margin="0,0,5,0" Width="50" Click="btnNew_Click"/>
+                <Button x:Name="btnDelete" Content="Delete" Padding="5" Width="50" Command="{Binding DeleteContractorCommand}"/>
+            </WrapPanel>
+        </DockPanel>
+
+        <GroupBox Header="Contractor Details" Grid.Row="1" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+            <StackPanel>
+                <ScrollViewer Margin="20,20,19.6,5" Height="180" x:Name="scrlDetails">
+                    <StackPanel IsEnabled="{Binding DetailShowBool, UpdateSourceTrigger=PropertyChanged}">
+                        <uc:DetailItem_ImageBrowser x:Name="dtlProfilePic" ImagePath="{Binding ContractorProfilePicName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlFirstName" DetailLabel="First Name" DetailValue="{Binding SelectedContractor.FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlLastName" DetailLabel="Last Name" DetailValue="{Binding SelectedContractor.LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlStreet" DetailLabel="Street" DetailValue="{Binding SelectedContractor.Street, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlSuburb" DetailLabel="Suburb" DetailValue="{Binding SelectedContractor.Suburb, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlState" DetailLabel="State" DetailValue="{Binding SelectedContractor.State, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlPostCode" DetailLabel="Post Code" DetailValue="{Binding SelectedContractor.PostCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlEmail" DetailLabel="Email" DetailValue="{Binding SelectedContractor.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlPhoneNumber" DetailLabel="Phone Number" DetailValue="{Binding SelectedContractor.PhoneNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlMobileNumber" DetailLabel="Mobile Phone Number" DetailValue="{Binding SelectedContractor.MobileNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlUsername" DetailLabel="Username" DetailValue="{Binding SelectedContractor.Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ContractorDetailsChangedCommand}"/>
+                        <Grid Height="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Content="Skills" BorderBrush="Gray" BorderThickness="1"/>
+                            <Button x:Name="btnSkills" Grid.Column="1" Content="Show / Edit Skills" Padding="5" Margin="2" Click="btnSkills_Click" />
+
+                            <Popup x:Name="popSkills" Placement="Mouse" StaysOpen="False" PopupAnimation="Slide" AllowsTransparency="True">
+                                <Grid Margin="10" Width="300" Background="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="2*" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <GroupBox Header="Avaliable Skills" Grid.Row="0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="5*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Content="Skill List:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                                            <ComboBox x:Name="cmbSkillList" Margin="0,5" Height="23" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SkillList}" SelectedItem="{Binding SelectedSkill, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
+                                                <Button x:Name="btnAddSkill" Content="Add Skill" HorizontalAlignment="Right" Padding="5" Margin="0,0,5,0" Command="{Binding AddSkillCommand}"/>
+                                                <Button x:Name="btnRemoveSkill" Content="Remove Skill" Padding="5" Command="{Binding RemoveSkillCommand}"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Skill List" Grid.Row="1">
+                                        <ListBox x:Name="lstSkills" ItemsSource="{Binding SelectedContractor.SkillList, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" SelectedItem="{Binding SelectedSkillList}"  />
+                                    </GroupBox>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                        <Grid Height="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Content="Roster" BorderBrush="Gray" BorderThickness="1"/>
+                            <Button x:Name="btnRoster" Grid.Column="1" Content="Show / Edit Roster" Padding="5" Margin="2" Click="btnRoster_Click"/>
+
+                            <Popup x:Name="popRoster" Placement="Mouse" StaysOpen="False" PopupAnimation="Slide" AllowsTransparency="True">
+                                <Grid Margin="10" Width="300" Background="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="2*" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <GroupBox Header="Roster Day Details" Grid.Row="0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="5*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Content="Day:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                                            <ComboBox x:Name="cmbDayOfWeek" Margin="0,5" Height="23" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Source={StaticResource DayValues}}" SelectedItem="{Binding RosterDay}"/>
+                                            <Label Content="Start Time:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                                            <xctk:TimePicker x:Name="tmpStartTime" Grid.Row="1" Grid.Column="1" TimeInterval="00:15:00" Margin="0,5" Text="{Binding RosterStartTime}"/>
+                                            <Label Content="End Time:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                                            <xctk:TimePicker x:Name="tmpEndTime" Grid.Row="2" Grid.Column="1" TimeInterval="00:15:00" Margin="0,5" Text="{Binding RosterEndTime}"/>
+                                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right">
+                                                <Button x:Name="btnAdd" Content="Add Day" HorizontalAlignment="Right" Padding="5" Margin="0,0,5,0" Command="{Binding AddRosterDayCommand}"/>
+                                                <Button x:Name="btnRemove" Content="Remove Day" Padding="5" Command="{Binding RemoveRosterDayCommand}"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Skill List" Grid.Row="1">
+                                        <DataGrid Margin="5" CanUserAddRows="False" ItemsSource="{Binding SelectedContractor.Roster, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" SelectedIndex="{Binding SelectedDay, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" AutoGenerateColumns="False">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Day Of Week" Binding="{Binding DayOfWeek}" Width="*"/>
+                                                <DataGridTextColumn Header="Start Time" Binding="{Binding StartTime}" Width="*"/>
+                                                <DataGridTextColumn Header="End Time" Binding="{Binding EndTime}" Width="*"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </GroupBox>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <Popup x:Name="popSaveChanges" PlacementTarget="{Binding ElementName=scrlDetails}" Placement="Bottom" PopupAnimation="Slide" AllowsTransparency="True" IsOpen="{Binding PopupBool, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid Background="#FFF65C5C" x:Name="grdSaveChanges" Width="{Binding ElementName=scrlDetails, Path=ActualWidth}">
+                        <TextBlock VerticalAlignment="Center" FontStyle="Italic" Margin="20,0,0,0" FontSize="16" >Save Changes?</TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                            <Button x:Name="btnAccept" Content="Accept" Padding="5" Margin="0,0,5,0" Width="50" Command="{Binding UpdateContractorCommand}"/>
+                            <Button x:Name="btnDeny" Content="Deny" Padding="5" Width="50" Click="btnDeny_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Popup>
+            </StackPanel>
+        </GroupBox>
+
+
+    </Grid>
+</Page>

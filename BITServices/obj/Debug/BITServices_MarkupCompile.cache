@@ -1,0 +1,20 @@
+﻿BITServices
+
+
+winexe
+C#
+.cs
+H:\Diploma Software Design\Programming Project\Client Server\BITServices\BITServices\obj\Debug\
+BITServices
+none
+false
+DEBUG;TRACE
+H:\Diploma Software Design\Programming Project\Client Server\BITServices\BITServices\App.xaml
+1742217260
+6497143348
+46892666902
+36511754039
+UI\Images\Logo\FullLogo.xaml;UI\Images\Logo\LogoSmall.xaml;UI\MainWindow.xaml;UI\Pages\ClientManagement.xaml;UI\Pages\ContractorManagement.xaml;UI\Pages\CoordinatorManagement.xaml;UI\Pages\JobRequestManagement.xaml;UI\Pages\WelcomePage.xaml;UI\UserControls\DetailItem.xaml;UI\UserControls\DetailItem_ImageBrowser.xaml;UI\UserControls\ProfilePic.xaml;UI\Windows\ContractorRosterWindow.xaml;UI\Windows\CreateJobRequestWindow.xaml;UI\Windows\EditJobRequestWindow.xaml;UI\Windows\NewClientWindow.xaml;UI\Windows\NewContractorWindow.xaml;UI\Windows\NewCoordinatorWindow.xaml;
+
+False
+

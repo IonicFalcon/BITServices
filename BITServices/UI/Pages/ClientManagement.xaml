@@ -1,0 +1,66 @@
+﻿<Page x:Class="BITServices.UI.Pages.ClientManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BITServices.UI.Pages"
+      xmlns:uc="clr-namespace:BITServices.UI.UserControls"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"  
+      mc:Ignorable="d" 
+      d:DesignHeight="510" d:DesignWidth="610"
+      Title="ClientManagement" Loaded="Page_Loaded">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False">
+            <!--<WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Top">
+                <Label Content="Search" DockPanel.Dock="Top" Target="{Binding ElementName=txtSearch}"/>
+                <TextBox x:Name="txtSearch" DockPanel.Dock="Top" Width="150" Height="25"/>
+            </WrapPanel>-->
+            <DataGrid x:Name="dgrRecords" Margin="0,5" Height="190" DockPanel.Dock="Top" ItemsSource="{Binding ClientCollection}" SelectedItem="{Binding SelectedClient}" IsReadOnly="True">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataGridSelectionCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+            <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                <Button x:Name="btnNew" Content="New" Padding="5" Margin="0,0,5,0" Width="50" Click="btnNew_Click"/>
+                <Button x:Name="btnDelete" Content="Delete" Padding="5" Width="50" Command="{Binding DeleteClientCommand}"/>
+            </WrapPanel>
+        </DockPanel>
+
+        <GroupBox Header="Client Details" Grid.Row="1" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+            <StackPanel>
+                <ScrollViewer Margin="20,20,20,5" Height="180" Name="scrlDetails">
+                    <StackPanel IsEnabled="{Binding DetailShowBool, UpdateSourceTrigger=PropertyChanged}">
+                        <uc:DetailItem_ImageBrowser x:Name="dtlProfilePic" ImagePath="{Binding ClientProfilePicName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlName" DetailLabel="Name" DetailValue="{Binding SelectedClient.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlStreet" DetailLabel="Street" DetailValue="{Binding SelectedClient.Street, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlSuburb" DetailLabel="Suburb" DetailValue="{Binding SelectedClient.Suburb, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlState" DetailLabel="State" DetailValue="{Binding SelectedClient.State, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlPostCode" DetailLabel="Post Code" DetailValue="{Binding SelectedClient.PostCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlEmail" DetailLabel="Email" DetailValue="{Binding SelectedClient.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlPhoneNumber" DetailLabel="Phone Number" DetailValue="{Binding SelectedClient.PhoneNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlMobileNumber" DetailLabel="Mobile Phone Number" DetailValue="{Binding SelectedClient.MobileNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                        <uc:DetailItem x:Name="dtlUsername" DetailLabel="Username" DetailValue="{Binding SelectedClient.Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnExceptions=True}" ValueChangedCommand="{Binding ClientDetailsChangedCommand}"/>
+                    </StackPanel>
+                </ScrollViewer>
+                <Popup x:Name="popSaveChanges" IsOpen="{Binding PopupBool, UpdateSourceTrigger=PropertyChanged}" PlacementTarget="{Binding ElementName=scrlDetails}" Placement="Bottom" PopupAnimation="Slide" AllowsTransparency="True">
+                    <Grid Background="#FFF65C5C" x:Name="grdSaveChanges" Width="{Binding ElementName=scrlDetails, Path=ActualWidth}">
+                        <TextBlock VerticalAlignment="Center" FontStyle="Italic" Margin="20,0,0,0" FontSize="16" >Save Changes?</TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                            <Button x:Name="btnAccept" Content="Accept" Padding="5" Margin="0,0,5,0" Width="50" Command="{Binding UpdateClientCommand}"/>
+                            <Button x:Name="btnDeny" Content="Deny" Padding="5" Width="50" Click="btnDeny_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Popup>
+            </StackPanel>
+        </GroupBox>
+
+
+    </Grid>
+</Page>

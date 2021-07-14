@@ -1,0 +1,81 @@
+﻿<Window x:Class="BITServices.UI.Windows.EditJobRequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BITServices.UI.Windows"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Edit Job Request" Height="700" Width="350" Icon="..\Images/Logo/LogoSmall.png" ResizeMode="NoResize">
+    <Window.Resources>
+        <CollectionViewSource x:Key="cvsAvaliableContractors" Source="{Binding AvaliableContractors}" Filter="CollectionViewSource_Filter"/>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Job Details" Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Client No:"  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtClientNo" Grid.Row="0"  Grid.Column="1" Style="{StaticResource textboxPadding}" Text="{Binding ClientID, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Job Date:"  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <DatePicker x:Name="dpcDate" Grid.Row="1" Grid.Column="1" Margin="0,5" Height="23" SelectedDate="{Binding EditJob.Date, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Job Time:"  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <xctk:TimePicker x:Name="tmpStartTime" Grid.Row="2" Grid.Column="1" TimeInterval="00:15:00" Margin="0,5" Value="{Binding EditJob.StartTime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Label Content="Job Skill:"  Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cmbJobSkill" Grid.Row="3" Grid.Column="1" Margin="0,5" Height="23" SelectedValue="{Binding EditJob.SkillType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ItemsSource="{Binding SkillList}"/>
+                <Label Content="Urgency:"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cmbUrgency" Grid.Row="4" Grid.Column="1" Margin="0,5" Height="23" SelectedValue="{Binding EditJob.Urgency, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="Content">
+                    <ComboBoxItem Content="Immediate"/>
+                    <ComboBoxItem Content="High" />
+                    <ComboBoxItem Content="Medium" />
+                    <ComboBoxItem Content="Low" />
+                </ComboBox>
+                <Label Content="Job Street:"  Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtStreet" Grid.Row="5"  Grid.Column="1" Style="{StaticResource textboxPadding}" Text="{Binding EditJob.Street, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Label Content="Job Suburb:"  Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtSuburb" Grid.Row="6"  Grid.Column="1" Style="{StaticResource textboxPadding}" Text="{Binding EditJob.Suburb, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Label Content="Job State:"  Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cmbState" Grid.Row="7" Grid.Column="1" Margin="0,5" Height="23" SelectedValue="{Binding EditJob.State, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="Content">
+                    <ComboBoxItem Content="NSW"/>
+                    <ComboBoxItem Content="QLD"/>
+                    <ComboBoxItem Content="NT"/>
+                    <ComboBoxItem Content="WA"/>
+                    <ComboBoxItem Content="SA"/>
+                    <ComboBoxItem Content="VIC"/>
+                    <ComboBoxItem Content="TAS"/>
+                    <ComboBoxItem Content="ACT"/>
+                </ComboBox>
+                <Label Content="Job Postcode:"  Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtPostCode" Grid.Row="8"  Grid.Column="1" Style="{StaticResource textboxPadding}" Text="{Binding EditJob.PostCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Label Content="Problem:"  Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right"/>
+                <TextBox x:Name="txtJobProblem" Grid.Row="9"  Grid.Column="1" Margin="0,5" Text="{Binding EditJob.JobDetails, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Avaliable Contractors" Grid.Row="1">
+            <DataGrid x:Name="dgrAvaliableContractors" Height="200" VerticalAlignment="Top" Margin="5" ItemsSource="{Binding Source={StaticResource cvsAvaliableContractors}}" SelectedItem="{Binding EditJob.AssignedContractor, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True"/>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
+            <Button x:Name="btnEdit" Content="Edit Job Request" Grid.Row="2" HorizontalAlignment="Right" Padding="5" Margin="0,0,5,0" Command="{Binding EditJobCommand}"/>
+            <Button x:Name="btnCancel" Content="Cancel" Padding="5" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

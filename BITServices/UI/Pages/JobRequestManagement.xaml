@@ -1,0 +1,55 @@
+﻿<Page x:Class="BITServices.UI.Pages.JobRequestManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BITServices.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="510" d:DesignWidth="610"
+      Title="JobRequestManagement" Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style TargetType="DataGridRow">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding JobStatus}" Value="Verify">
+                    <Setter Property="Background" Value="LightGray"/>
+                </DataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding JobStatus}" Value="Active"/>
+                        <Condition Binding="{Binding AssignedContractor}" Value="{x:Null}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Background" Value="LightBlue"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <DataTrigger Binding="{Binding JobStatus}" Value="Rejected">
+                    <Setter Property="Background" Value="LightBlue"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding JobStatus}" Value="Completed">
+                    <Setter Property="Background" Value="LightGreen"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid Margin="20">
+        <DockPanel LastChildFill="False">
+            <!--<WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Top">
+                <Label Content="Search" DockPanel.Dock="Top" Target="{Binding ElementName=txtSearch}"/>
+                <TextBox x:Name="txtSearch" DockPanel.Dock="Top" Width="150" Height="25"/>
+            </WrapPanel>-->
+            <DataGrid x:Name="dgrRecords" Margin="0,5,5,5" DockPanel.Dock="Top" Height="425" ItemsSource="{Binding JobCollection}" SelectedItem="{Binding SelectedJob}" IsReadOnly="True">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Hide Completed Jobs" IsCheckable="True"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                <Button x:Name="btnCreateRequest" Content="Create Request" Padding="5" Margin="0,0,5,0" Click="btnCreateRequest_Click"/>
+                <Button x:Name="btnEditRequest" Content="Edit Request" Padding="5" Margin="0,0,5,0" Click="btnEditRequest_Click"/>
+                <Button x:Name="btnVerifyRequest" Content="Verify Request" Padding="5" Margin="0,0,5,0" Command="{Binding VerifyRequestCommand}"/>
+                <Button x:Name="btnDeleteRequest" Content="Delete Request" Padding="5" Command="{Binding DeleteRequestCommand}"/>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</Page>

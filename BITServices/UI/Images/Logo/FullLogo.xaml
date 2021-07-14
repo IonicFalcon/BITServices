@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is compatible with Silverlight-->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="svg885" Width="420" Height="200">
+  <Canvas.RenderTransform>
+    <TranslateTransform X="0" Y="0"/>
+  </Canvas.RenderTransform>
+  <Canvas.Resources>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath44" Figures="M 0 1000 H 1000 V 0 H 0 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath52" Figures="m 365.547 150.324 h 304 V 68.233 h -304 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath66" Figures="m 239.748 145.845 h 231 V 97.6903 h -231 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath80" Figures="M 578.547 170.048 H 797.748 V 132.422 H 578.547 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath94" Figures="m 292.547 159.788 h 304 v -44.202 h -304 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath108" Figures="m 517.547 115.586 h 304 V 84.5499 h -304 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath122" Figures="M 239.748 89.7469 H 456.547 V 76.1316 H 239.748 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath136" Figures="M 116.748 141.373 H 373.442 V 110.189 H 116.748 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath150" Figures="M 292.547 165.842 H 720.748 V 58.5027 H 292.547 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath164" Figures="m 214.547 79.1553 h 170 V 37.8501 h -170 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath178" Figures="M 538.335 75.0859 H 759.748 V 29.8313 H 538.335 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath192" Figures="m 435.547 36.3928 h 91.201 V 19.0236 h -91.201 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath206" Figures="M 60.1416 177.285 H 173.354 V 162.81 H 60.1416 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath220" Figures="m 609.547 206.082 h 141.895 v -9.471 H 609.547 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath234" Figures="m 258.616 204.215 h 89.532 v -24.177 h -89.532 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath248" Figures="M 94.5474 63.1736 H 147.179 V 48.9612 H 94.5474 Z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath262" Figures="m 861.741 55.8687 h 35.071 v -9.4705 h -35.071 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath276" Figures="m 825.823 181.619 h 71.835 v -41.305 h -71.835 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath290" Figures="m 186.782 171.887 h 71.834 v -41.305 h -71.834 z" FillRule="NonZero"/>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath304" Figures="m 214.547 240 h 25.201 v -14.491 h -25.201 z" FillRule="NonZero"/>
+    <RadialGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="radialGradient330" MappingMode="Absolute" SpreadMethod="Pad" Center="0,0" GradientOrigin="0,0" RadiusX="1" RadiusY="1">
+      <RadialGradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFFFFB00" Offset="0"/>
+          <GradientStop Color="#FFFFFB00" Offset="0.28141303"/>
+          <GradientStop Color="#FFFF6700" Offset="1"/>
+        </GradientStopCollection>
+      </RadialGradientBrush.GradientStops>
+      <RadialGradientBrush.Transform>
+        <MatrixTransform Matrix="334.94263 0 0 -334.94263 477.41959 487.34467"/>
+      </RadialGradientBrush.Transform>
+    </RadialGradientBrush>
+    <PathGeometry xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="clipPath340" Figures="M 0 1000 H 1000 V 0 H 0 Z" FillRule="NonZero"/>
+  </Canvas.Resources>
+  <!--Unknown tag: sodipodi:namedview-->
+  <!--Unknown tag: metadata-->
+  <Canvas Name="layer1">
+    <Canvas Name="g36">
+      <Canvas.RenderTransform>
+        <MatrixTransform Matrix="0.18152951 0 0 -0.18152951 -0.94591177 189.03591"/>
+      </Canvas.RenderTransform>
+      <Canvas Name="g38">
+        <Canvas.RenderTransform>
+          <MatrixTransform Matrix="2.6591076 0 0 1 -114.76605 13.529"/>
+        </Canvas.RenderTransform>
+        <Canvas Name="g40" Clip="{StaticResource clipPath44}">
+          <Canvas Name="g46">
+            <Canvas Name="g48"/>
+            <Canvas Name="g58">
+              <Canvas Name="g56" Clip="{StaticResource clipPath52}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path54" Fill="#FF00FFFF" Data="m 669.548 68.233 h -304 v 82.091 h 304 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g60">
+            <Canvas Name="g62"/>
+            <Canvas Name="g72">
+              <Canvas Name="g70" Clip="{StaticResource clipPath66}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path68" Fill="#FF00FFFF" Data="m 470.748 97.69 h -231 v 48.154 h 231 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g74">
+            <Canvas Name="g76"/>
+            <Canvas Name="g86">
+              <Canvas Name="g84" Clip="{StaticResource clipPath80}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path82" Fill="#FF00FFFF" Data="m 797.748 132.422 h -219.2 v 37.626 h 219.2 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g88">
+            <Canvas Name="g90"/>
+            <Canvas Name="g100">
+              <Canvas Name="g98" Clip="{StaticResource clipPath94}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path96" Fill="#FF00FFFF" Data="m 596.548 115.586 h -304 v 44.202 h 304 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g102">
+            <Canvas Name="g104"/>
+            <Canvas Name="g114">
+              <Canvas Name="g112" Clip="{StaticResource clipPath108}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path110" Fill="#FF00FFFF" Data="m 821.548 84.55 h -304 v 31.036 h 304 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g116">
+            <Canvas Name="g118"/>
+            <Canvas Name="g128">
+              <Canvas Name="g126" Clip="{StaticResource clipPath122}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path124" Fill="#FF00FFFF" Data="M 456.547 76.132 H 239.748 v 13.615 h 216.799 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g130">
+            <Canvas Name="g132"/>
+            <Canvas Name="g142">
+              <Canvas Name="g140" Clip="{StaticResource clipPath136}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path138" Fill="#FF00FFFF" Data="M 373.442 110.189 H 116.748 v 31.184 h 256.694 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g144">
+            <Canvas Name="g146"/>
+            <Canvas Name="g156">
+              <Canvas Name="g154" Clip="{StaticResource clipPath150}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path152" Fill="#FF00FFFF" Data="M 720.748 58.503 H 292.547 v 107.339 h 428.201 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g158">
+            <Canvas Name="g160"/>
+            <Canvas Name="g170">
+              <Canvas Name="g168" Clip="{StaticResource clipPath164}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path166" Fill="#FF00FFFF" Data="m 384.547 37.85 h -170 v 41.306 h 170 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g172">
+            <Canvas Name="g174"/>
+            <Canvas Name="g184">
+              <Canvas Name="g182" Clip="{StaticResource clipPath178}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path180" Fill="#FF00FFFF" Data="M 759.748 29.831 H 538.335 v 45.255 h 221.413 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g186">
+            <Canvas Name="g188"/>
+            <Canvas Name="g198">
+              <Canvas Name="g196" Clip="{StaticResource clipPath192}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path194" Fill="#FF00FFFF" Data="m 526.748 19.023 h -91.201 v 17.369 h 91.201 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g200">
+            <Canvas Name="g202"/>
+            <Canvas Name="g212">
+              <Canvas Name="g210" Clip="{StaticResource clipPath206}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path208" Fill="#FF00FFFF" Data="M 173.354 162.81 H 60.142 v 14.476 h 113.212 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g214">
+            <Canvas Name="g216"/>
+            <Canvas Name="g226">
+              <Canvas Name="g224" Clip="{StaticResource clipPath220}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path222" Fill="#FF00FFFF" Data="M 751.442 196.611 H 609.547 v 9.471 h 141.895 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g228">
+            <Canvas Name="g230"/>
+            <Canvas Name="g240">
+              <Canvas Name="g238" Clip="{StaticResource clipPath234}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path236" Fill="#FF00FFFF" Data="m 348.147 180.038 h -89.532 v 24.177 h 89.532 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g242">
+            <Canvas Name="g244"/>
+            <Canvas Name="g254">
+              <Canvas Name="g252" Clip="{StaticResource clipPath248}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path250" Fill="#FF00FFFF" Data="M 147.179 48.961 H 94.548 v 14.213 h 52.631 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g256">
+            <Canvas Name="g258"/>
+            <Canvas Name="g268">
+              <Canvas Name="g266" Clip="{StaticResource clipPath262}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path264" Fill="#FF00FFFF" Data="m 896.812 46.398 h -35.071 v 9.471 h 35.071 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g270">
+            <Canvas Name="g272"/>
+            <Canvas Name="g282">
+              <Canvas Name="g280" Clip="{StaticResource clipPath276}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path278" Fill="#FF00FFFF" Data="m 897.658 140.314 h -71.835 v 41.305 h 71.835 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g284">
+            <Canvas Name="g286"/>
+            <Canvas Name="g296">
+              <Canvas Name="g294" Clip="{StaticResource clipPath290}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path292" Fill="#FF00FFFF" Data="m 258.616 130.582 h -71.834 v 41.306 h 71.834 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+          <Canvas Name="g298">
+            <Canvas Name="g300"/>
+            <Canvas Name="g310">
+              <Canvas Name="g308" Clip="{StaticResource clipPath304}">
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path306" Fill="#FF00FFFF" Data="M 239.748 225.51 H 214.547 V 240 h 25.201 z"/>
+              </Canvas>
+            </Canvas>
+          </Canvas>
+        </Canvas>
+      </Canvas>
+      <Canvas Name="g312">
+        <Canvas Name="g314">
+          <Canvas Name="g320">
+            <Canvas Name="g322">
+              <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path332" Fill="{StaticResource radialGradient330}" Data="m 384.481 923.333 c -17.961 -0.022 -32.447 -14.742 -32.447 -32.704 v 0 -683.232 c -34.377 -8.676 -59.818 -39.812 -59.781 -76.892 v 0 c 0.04 -42.741 34.582 -78.119 77.31 -79.126 v 0 c 44.631 -1.054 81.142 34.811 81.142 79.203 v 0 c 0 37.046 -25.429 68.144 -59.782 76.815 v 0 682.275 c 124.897 -3.238 225.15 -105.498 225.15 -231.176 v 0 c 0 -60.348 -23.121 -115.293 -60.982 -156.471 v 0 c -4.622 -5.028 -7.234 -11.579 -7.234 -18.409 v 0 -24.169 c 0 -2.517 1.409 -5.33 5.071 -5.576 v 0 c 44.664 -2.625 80.077 -39.662 80.077 -84.984 v 0 c 0 -41.132 -29.165 -75.452 -67.944 -83.408 v 0 c -6.212 24.298 -28.764 42.057 -55.257 40.878 v 0 c -28.06 -1.248 -50.807 -24.102 -51.934 -52.168 v 0 c -1.249 -31.102 23.597 -56.709 54.422 -56.709 v 0 c 24.279 0 44.839 15.89 51.871 37.836 v 0 c 55.639 7.918 98.424 55.744 98.424 113.571 v 0 c 0 52.329 -35.035 96.471 -82.928 110.259 v 0 c 43.449 47.177 69.992 110.16 69.992 179.35 v 0 c 0 146.266 -118.572 264.837 -264.837 264.837 v 0 c -0.111 0 -0.222 0 -0.333 0 M 486.508 271.947 c 0 14.239 11.544 25.784 25.784 25.784 v 0 c 14.24 0 25.784 -11.545 25.784 -25.784 v 0 c 0 -14.241 -11.544 -25.785 -25.784 -25.785 v 0 c -14.24 0 -25.784 11.544 -25.784 25.785 M 323.999 130.582 c 0 26.222 21.257 47.479 47.48 47.479 v 0 c 26.221 0 47.478 -21.257 47.478 -47.479 v 0 c 0 -26.222 -21.257 -47.479 -47.478 -47.479 v 0 c -26.223 0 -47.48 21.257 -47.48 47.479"/>
+            </Canvas>
+          </Canvas>
+        </Canvas>
+      </Canvas>
+      <Canvas Name="g334">
+        <Canvas Name="g336" Clip="{StaticResource clipPath340}">
+          <Canvas Name="g342">
+            <Canvas.RenderTransform>
+              <TranslateTransform X="512.292" Y="246.1621"/>
+            </Canvas.RenderTransform>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path344" StrokeThickness="2" Stroke="#FF000000" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 0 0 c -14.24 0 -25.784 11.544 -25.784 25.784 0 14.24 11.544 25.784 25.784 25.784 14.24 0 25.784 -11.544 25.784 -25.784 C 25.784 11.544 14.24 0 0 0 Z m -93.334 -115.58 c 0 -26.222 -21.258 -47.479 -47.479 -47.479 -26.223 0 -47.479 21.257 -47.479 47.479 0 26.223 21.256 47.479 47.479 47.479 26.221 0 47.479 -21.256 47.479 -47.479 z M 67.367 232.984 c 43.448 47.176 69.992 110.159 69.992 179.35 0 146.266 -118.572 264.837 -264.837 264.837 -0.111 0 -0.222 0 -0.333 0 -17.961 -0.023 -32.447 -14.742 -32.447 -32.704 V -38.766 c -34.377 -8.675 -59.817 -39.811 -59.782 -76.891 0.041 -42.74 34.583 -78.118 77.311 -79.126 44.631 -1.054 81.142 34.811 81.142 79.203 0 37.046 -25.429 68.144 -59.782 76.814 V 643.511 C 3.527 640.272 103.78 538.012 103.78 412.334 c 0 -60.348 -23.12 -115.293 -60.981 -156.471 -4.622 -5.028 -7.234 -11.579 -7.234 -18.409 v -24.169 c 0 -2.517 1.409 -5.33 5.072 -5.576 44.663 -2.625 80.076 -39.662 80.076 -84.984 C 120.713 81.593 91.548 47.273 52.77 39.317 46.557 63.615 24.006 81.374 -2.488 80.195 -30.548 78.946 -53.295 56.093 -54.421 28.027 -55.67 -3.075 -30.826 -28.683 0 -28.683 c 24.279 0 44.84 15.891 51.871 37.836 55.639 7.918 98.424 55.744 98.424 113.572 0 52.329 -35.035 96.471 -82.928 110.259 z"/>
+          </Canvas>
+        </Canvas>
+      </Canvas>
+    </Canvas>
+    <TextBlock xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" FontSize="50.79999999999999716" FontWeight="Normal" FontFamily="sans-serif" FontStyle="normal" Foreground="#FF000000" Canvas.Left="126.72956" Canvas.Top="56.9" Name="text1553">
+      <Span xml:space="preserve" Foreground="#FF000000" FontSize="50.79999999999999716" FontWeight="Normal" FontFamily="Avenir" FontStyle="italic">BIT Services</Span>
+    </TextBlock>
+  </Canvas>
+</Canvas>
