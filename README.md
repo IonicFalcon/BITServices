@@ -12,6 +12,7 @@ This project was developed over the course of a semester, starting from an initi
 The application was to consist of two sections:
 1. A desktop admin application in which an admin could log in and manage request for jobs to contractors, along with approving completed jobs for payment. This application was to be written in C# using the .NET Framework via WPF.
 2. A cloud application for contractors in which they could view their active jobs, mark jobs as complete, and accepted any new job requests. This application was to be written in C# using ASP.NET via Web Forms.
+
 Both of these applications would communication to each other via a single database created via SQL Server.
 
 ## What technologies where used in this project?
